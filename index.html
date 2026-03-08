@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pooja Kumawat — Senior Software Engineer</title>
+<meta name="description" content="Senior Software Engineer with 9+ years experience in Java, Spring Boot, Microservices, AI/GenAI, and Cloud (Azure/AWS).">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0f;--card:#12121a;--border:#1e1e2e;--text:#e0e0e0;--muted:#9ca3af;--accent:#6366f1;--accent2:#a855f7;--accent3:#06b6d4;--green:#10b981;--orange:#f97316}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent2)}
+
+/* Nav */
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,10,15,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:60px}
+.nav-logo{font-weight:700;font-size:1.1rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:var(--muted);font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.hamburger{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 24px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.12),transparent 70%);top:-100px;right:-200px}
+.hero::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.1),transparent 70%);bottom:-150px;left:-200px}
+.hero-content{max-width:800px;position:relative;z-index:1;text-align:center}
+.hero-badge{display:inline-block;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);padding:6px 16px;border-radius:20px;font-size:.82rem;color:var(--accent);margin-bottom:20px;letter-spacing:.5px}
+.hero h1{font-size:3.2rem;font-weight:800;line-height:1.15;margin-bottom:16px}
+.hero h1 .gradient{background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:600px;margin:0 auto 32px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:10px;font-weight:600;font-size:.95rem;transition:all .25s}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(99,102,241,.3);color:#fff}
+.btn-outline{border:1px solid var(--border);color:var(--text);background:transparent}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-stats{display:flex;justify-content:center;gap:48px;margin-top:48px}
+.stat{text-align:center}
+.stat-num{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:.82rem;color:var(--muted);margin-top:2px}
+
+/* Section */
+section{padding:80px 24px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{display:inline-block;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);padding:4px 14px;border-radius:16px;font-size:.78rem;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-size:2rem;font-weight:700;margin-bottom:40px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.about-text p{color:var(--muted);margin-bottom:16px;font-size:1rem}
+.about-highlights{display:grid;gap:16px}
+.highlight{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;display:flex;gap:14px;align-items:flex-start}
+.highlight-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.highlight h4{font-size:.95rem;margin-bottom:4px}
+.highlight p{font-size:.85rem;color:var(--muted)}
+.hi-blue .highlight-icon{background:rgba(99,102,241,.15)}
+.hi-green .highlight-icon{background:rgba(16,185,129,.15)}
+.hi-orange .highlight-icon{background:rgba(249,115,22,.15)}
+.hi-purple .highlight-icon{background:rgba(168,85,247,.15)}
+
+/* Skills */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;transition:border-color .3s,transform .3s}
+.skill-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.skill-card h3{font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tag{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);padding:4px 12px;border-radius:16px;font-size:.78rem;color:var(--accent)}
+.skill-tag.green{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.2);color:var(--green)}
+.skill-tag.orange{background:rgba(249,115,22,.1);border-color:rgba(249,115,22,.2);color:var(--orange)}
+.skill-tag.purple{background:rgba(168,85,247,.1);border-color:rgba(168,85,247,.2);color:var(--accent2)}
+.skill-tag.cyan{background:rgba(6,182,212,.1);border-color:rgba(6,182,212,.2);color:var(--accent3)}
+
+/* Experience */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent2),var(--accent3))}
+.tl-item{position:relative;margin-bottom:40px}
+.tl-item::before{content:'';position:absolute;left:-29px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl-item:nth-child(2)::before{background:var(--accent2)}
+.tl-item:nth-child(3)::before{background:var(--accent3)}
+.tl-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.tl-role{font-size:1.15rem;font-weight:700}
+.tl-date{font-size:.85rem;color:var(--accent);font-weight:500}
+.tl-company{font-size:.95rem;color:var(--muted);margin-bottom:12px}
+.tl-points{list-style:none;padding:0}
+.tl-points li{position:relative;padding-left:20px;margin-bottom:8px;font-size:.9rem;color:var(--muted)}
+.tl-points li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--border)}
+
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:border-color .3s,transform .3s;display:flex;flex-direction:column}
+.project-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.project-icon{font-size:1.8rem;margin-bottom:12px}
+.project-card h3{font-size:1.05rem;margin-bottom:8px}
+.project-card p{font-size:.88rem;color:var(--muted);flex:1;margin-bottom:16px}
+.project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.project-tags span{font-size:.72rem;padding:3px 10px;border-radius:12px;background:rgba(99,102,241,.1);color:var(--accent);border:1px solid rgba(99,102,241,.15)}
+.project-link{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;font-weight:500;color:var(--accent)}
+.project-link:hover{color:var(--accent2)}
+.project-card.ai-card{border-top:2px solid var(--accent2)}
+.project-card.backend-card{border-top:2px solid var(--accent3)}
+
+/* Certifications */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.cert{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;display:flex;align-items:center;gap:14px}
+.cert-icon{font-size:1.5rem}
+.cert p{font-size:.9rem;font-weight:500}
+
+/* Awards */
+.awards-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.award{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+.award h4{font-size:1rem;margin-bottom:6px}
+.award p{font-size:.88rem;color:var(--muted)}
+.award-badge{display:inline-block;font-size:.75rem;padding:3px 10px;border-radius:12px;margin-bottom:10px}
+.award-badge.gold{background:rgba(251,191,36,.15);color:#fbbf24}
+.award-badge.blue{background:rgba(99,102,241,.15);color:var(--accent)}
+
+/* Contact */
+.contact-section{background:linear-gradient(180deg,var(--bg),#0f0f1a)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;text-align:center;transition:border-color .3s,transform .3s}
+.contact-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.contact-card .icon{font-size:2rem;margin-bottom:12px}
+.contact-card h4{font-size:.95rem;margin-bottom:6px}
+.contact-card p{font-size:.88rem;color:var(--muted)}
+.contact-card a{color:var(--accent);font-weight:500}
+
+/* Footer */
+footer{text-align:center;padding:40px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+
+/* Responsive */
+@media(max-width:768px){
+.hero h1{font-size:2.2rem}
+.hero-stats{gap:24px}
+.stat-num{font-size:1.5rem}
+.about-grid,.awards-grid{grid-template-columns:1fr}
+.contact-grid{grid-template-columns:1fr}
+.nav-links{display:none}
+.hamburger{display:block}
+.nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:rgba(10,10,15,.97);padding:20px;gap:16px;border-bottom:1px solid var(--border)}
+.projects-grid{grid-template-columns:1fr}
+}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.animate{animation:fadeUp .6s ease both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">PK</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content animate">
+    <div class="hero-badge">Open to Relocation &bull; Open to Onsite Opportunities</div>
+    <h1>Hi, I'm <span class="gradient">Pooja Kumawat</span></h1>
+    <p>Senior Software Engineer with 9+ years building scalable enterprise applications, microservices, and AI-powered systems at Maersk.</p>
+    <div class="hero-btns">
+      <a href="https://github.com/rtpuja" target="_blank" class="btn btn-primary">GitHub Profile &rarr;</a>
+      <a href="https://www.linkedin.com/in/pooja-kumawat-7443368a" target="_blank" class="btn btn-outline">LinkedIn &rarr;</a>
+      <a href="mailto:pooja.kumawat75@gmail.com" class="btn btn-outline">Hire Me</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">9+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-num">25+</div><div class="stat-label">GitHub Repos</div></div>
+      <div class="stat"><div class="stat-num">5</div><div class="stat-label">Certifications</div></div>
+      <div class="stat"><div class="stat-num">3x</div><div class="stat-label">Spot Awards</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <span class="section-label">About Me</span>
+    <h2 class="section-title">Turning Complex Problems into Scalable Solutions</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a Senior Software Engineer at <strong>Maersk Global Services</strong> in Pune, specializing in Java, Spring Boot, and cloud-native architectures. I design and build distributed systems that handle enterprise-scale workloads.</p>
+        <p>Recently, I've been at the forefront of integrating <strong>AI/GenAI</strong> into enterprise systems — building RAG pipelines, AI agents on Microsoft AI Foundry, and MCP-based tool integrations deployed to Microsoft Teams and M365 Copilot.</p>
+        <p>I've worked onsite in <strong>Spain</strong> and <strong>Italy</strong>, collaborating directly with international stakeholders on production systems.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight hi-blue"><div class="highlight-icon">&#9889;</div><div><h4>Enterprise Scale</h4><p>Building distributed systems at Maersk — one of the world's largest logistics companies</p></div></div>
+        <div class="highlight hi-green"><div class="highlight-icon">&#129302;</div><div><h4>AI/GenAI Integration</h4><p>RAG pipelines, AI agents, LLMs, and MCP architecture in production</p></div></div>
+        <div class="highlight hi-orange"><div class="highlight-icon">&#127758;</div><div><h4>International Experience</h4><p>Onsite assignments in Spain and Italy with cross-cultural teams</p></div></div>
+        <div class="highlight hi-purple"><div class="highlight-icon">&#127942;</div><div><h4>Consistently Recognized</h4><p>Spot Awards 2024-2026, Employee of the Year 2018</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="background:#0d0d14">
+  <div class="section-inner">
+    <span class="section-label">Tech Stack</span>
+    <h2 class="section-title">What I Work With</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><h3>&#9749; Backend</h3><div class="skill-tags">
+        <span class="skill-tag">Java 21/17/11</span><span class="skill-tag">Spring Boot</span><span class="skill-tag">Spring MVC</span><span class="skill-tag">Hibernate</span><span class="skill-tag">JPA</span><span class="skill-tag">MyBatis</span><span class="skill-tag">REST APIs</span><span class="skill-tag">SOA</span>
+      </div></div>
+      <div class="skill-card"><h3>&#129302; AI / GenAI</h3><div class="skill-tags">
+        <span class="skill-tag purple">LLMs</span><span class="skill-tag purple">RAG</span><span class="skill-tag purple">MCP</span><span class="skill-tag purple">Prompt Engineering</span><span class="skill-tag purple">AI Agents</span><span class="skill-tag purple">Vector Databases</span><span class="skill-tag purple">Azure AI Foundry</span>
+      </div></div>
+      <div class="skill-card"><h3>&#9729;&#65039; Cloud & DevOps</h3><div class="skill-tags">
+        <span class="skill-tag cyan">Azure</span><span class="skill-tag cyan">AWS</span><span class="skill-tag cyan">S3</span><span class="skill-tag cyan">Lambda</span><span class="skill-tag cyan">Docker</span><span class="skill-tag cyan">Kubernetes</span><span class="skill-tag cyan">GitHub Actions</span>
+      </div></div>
+      <div class="skill-card"><h3>&#128225; Messaging & Data</h3><div class="skill-tags">
+        <span class="skill-tag green">Kafka</span><span class="skill-tag green">ActiveMQ</span><span class="skill-tag green">PostgreSQL</span><span class="skill-tag green">MySQL</span><span class="skill-tag green">MongoDB</span><span class="skill-tag green">SQL Server</span>
+      </div></div>
+      <div class="skill-card"><h3>&#127912; Frontend</h3><div class="skill-tags">
+        <span class="skill-tag orange">Angular 11</span><span class="skill-tag orange">Vue 3</span><span class="skill-tag orange">HTML/CSS</span><span class="skill-tag orange">JavaScript</span>
+      </div></div>
+      <div class="skill-card"><h3>&#128736;&#65039; Tools & Testing</h3><div class="skill-tags">
+        <span class="skill-tag">Maven</span><span class="skill-tag">Gradle</span><span class="skill-tag">Git</span><span class="skill-tag">Postman</span><span class="skill-tag">Swagger</span><span class="skill-tag">Jira</span><span class="skill-tag">Confluence</span><span class="skill-tag">Power BI</span>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-inner">
+    <span class="section-label">Experience</span>
+    <h2 class="section-title">Where I've Worked</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-header"><span class="tl-role">Senior Software Engineer</span><span class="tl-date">Jul 2022 — Present</span></div>
+        <div class="tl-company">Maersk Global Services &bull; Pune</div>
+        <ul class="tl-points">
+          <li>Designed and implemented AI-powered applications using LLMs and prompt engineering</li>
+          <li>Built RAG pipelines using vector embeddings and document indexing for enterprise use</li>
+          <li>Developed AI Agents on Microsoft AI Foundry, published to Teams & M365 Copilot</li>
+          <li>Integrated external tools and APIs using Model Context Protocol (MCP) architecture</li>
+          <li>Worked with vector databases and semantic search for intelligent document retrieval</li>
+          <li>Integrated third-party APIs and resolved complex system issues at enterprise scale</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-header"><span class="tl-role">Full Stack Developer</span><span class="tl-date">Sep 2020 — Jun 2022</span></div>
+        <div class="tl-company">Principal Global Services &bull; Pune</div>
+        <ul class="tl-points">
+          <li>Deployed cloud-native applications on AWS (S3, Lambda, EC2)</li>
+          <li>Conducted deep debugging and root cause analysis on production systems</li>
+          <li>Developed applications using Java with focus on code quality and reusability</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-header"><span class="tl-role">Software Developer</span><span class="tl-date">Dec 2016 — Aug 2020</span></div>
+        <div class="tl-company">Sumasoft Pvt Ltd &bull; Pune</div>
+        <ul class="tl-points">
+          <li>Built REST APIs for mobile and web applications</li>
+          <li>Maximized application efficiency, data quality, and operational flexibility</li>
+          <li>Created full-stack applications using HTML, CSS, JavaScript, and Java</li>
+          <li>Awarded Employee of the Year (2018) for outstanding delivery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="background:#0d0d14">
+  <div class="section-inner">
+    <span class="section-label">Projects</span>
+    <h2 class="section-title">What I've Built</h2>
+    <div class="projects-grid">
+      <div class="project-card ai-card">
+        <div class="project-icon">&#129504;</div>
+        <h3>AI Resume Analyzer</h3>
+        <p>AI-powered tool giving ATS scores, improvement suggestions, and job match analysis with visual dashboard and exportable reports.</p>
+        <div class="project-tags"><span>Python</span><span>LangChain</span><span>Azure OpenAI</span><span>Streamlit</span><span>Plotly</span></div>
+        <a href="https://github.com/rtpuja/ai-resume-analyzer" target="_blank" class="project-link">View on GitHub &rarr;</a>
+      </div>
+      <div class="project-card ai-card">
+        <div class="project-icon">&#128218;</div>
+        <h3>RAG Document Chat</h3>
+        <p>Upload PDFs, ask questions, get accurate answers with page references. Full RAG pipeline with vector search and conversation memory.</p>
+        <div class="project-tags"><span>Python</span><span>LangChain</span><span>ChromaDB</span><span>HuggingFace</span><span>Streamlit</span></div>
+        <a href="https://github.com/rtpuja/rag-document-chat" target="_blank" class="project-link">View on GitHub &rarr;</a>
+      </div>
+      <div class="project-card ai-card">
+        <div class="project-icon">&#128269;</div>
+        <h3>AI Code Review Assistant</h3>
+        <p>Automated GitHub PR reviews detecting bugs, optimizations, documentation gaps, and security issues. Posts results as PR comments.</p>
+        <div class="project-tags"><span>Java 17</span><span>Spring Boot</span><span>GitHub API</span><span>Azure OpenAI</span></div>
+        <a href="https://github.com/rtpuja/ai-code-review" target="_blank" class="project-link">View on GitHub &rarr;</a>
+      </div>
+      <div class="project-card ai-card">
+        <div class="project-icon">&#128196;</div>
+        <h3>Azure Foundry Summarizer</h3>
+        <p>REST API that summarizes text using Azure AI Foundry. Beginner-friendly GenAI project demonstrating Azure OpenAI chat completions.</p>
+        <div class="project-tags"><span>Java 17</span><span>Spring Boot</span><span>Azure AI</span></div>
+        <a href="https://github.com/rtpuja/azure-foundry-summarizer" target="_blank" class="project-link">View on GitHub &rarr;</a>
+      </div>
+      <div class="project-card backend-card">
+        <div class="project-icon">&#128674;</div>
+        <h3>Spring Boot + K8s + Helm</h3>
+        <p>Production-ready Spring Boot app with Kubernetes deployment using Helm charts for packaging and release management.</p>
+        <div class="project-tags"><span>Java</span><span>Kubernetes</span><span>Helm</span><span>Docker</span></div>
+        <a href="https://github.com/rtpuja/springboot-k8s-helm" target="_blank" class="project-link">View on GitHub &rarr;</a>
+      </div>
+      <div class="project-card backend-card">
+        <div class="project-icon">&#128200;</div>
+        <h3>Prometheus + Grafana Demo</h3>
+        <p>Observability setup with Prometheus metrics collection and Grafana dashboards for Spring Boot microservices monitoring.</p>
+        <div class="project-tags"><span>Prometheus</span><span>Grafana</span><span>Spring Boot</span><span>Docker</span></div>
+        <a href="https://github.com/rtpuja/prometheus-grafana-demo-updated" target="_blank" class="project-link">View on GitHub &rarr;</a>
+      </div>
+      <div class="project-card backend-card">
+        <div class="project-icon">&#127744;</div>
+        <h3>Kafka Retry Spring Boot</h3>
+        <p>Kafka-based message retry mechanism with configurable retry policies for resilient event-driven microservices.</p>
+        <div class="project-tags"><span>Java</span><span>Kafka</span><span>Spring Boot</span></div>
+        <a href="https://github.com/rtpuja/kafka-retry-springboot" target="_blank" class="project-link">View on GitHub &rarr;</a>
+      </div>
+      <div class="project-card backend-card">
+        <div class="project-icon">&#128176;</div>
+        <h3>Expense Tracker</h3>
+        <p>Modern personal expense tracker with category-based spending, trend charts, and CSV export. Built with Next.js and TypeScript.</p>
+        <div class="project-tags"><span>Next.js 14</span><span>TypeScript</span><span>Tailwind CSS</span></div>
+        <a href="https://github.com/rtpuja/expense-tracker" target="_blank" class="project-link">View on GitHub &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <span class="section-label">Certifications</span>
+    <h2 class="section-title">Credentials</h2>
+    <div class="cert-grid">
+      <div class="cert"><div class="cert-icon">&#9729;&#65039;</div><div><p>Azure 204 Certification</p></div></div>
+      <div class="cert"><div class="cert-icon">&#9729;&#65039;</div><div><p>AWS Cloud Practitioner Essentials</p></div></div>
+      <div class="cert"><div class="cert-icon">&#128187;</div><div><p>Full-Stack MEAN Certification</p></div></div>
+      <div class="cert"><div class="cert-icon">&#127912;</div><div><p>Front End Web Development</p></div></div>
+      <div class="cert"><div class="cert-icon">&#128736;&#65039;</div><div><p>Back End Web Development</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#0d0d14">
+  <div class="section-inner">
+    <span class="section-label">Recognition</span>
+    <h2 class="section-title">Awards & Achievements</h2>
+    <div class="awards-grid">
+      <div class="award"><span class="award-badge gold">&#127942; Award</span><h4>Spot Award — 2024, 2025, 2026</h4><p>Recognized at Maersk for consistent high performance, ownership, and delivering critical enterprise solutions.</p></div>
+      <div class="award"><span class="award-badge gold">&#127775; Award</span><h4>Employee of the Year — 2018</h4><p>Awarded at Sumasoft for outstanding technical contribution, project delivery excellence, and team collaboration.</p></div>
+      <div class="award"><span class="award-badge blue">&#127758; International</span><h4>Onsite — Spain (2025)</h4><p>Worked with international stakeholders on requirement discussions, production support, and team collaboration.</p></div>
+      <div class="award"><span class="award-badge blue">&#127758; International</span><h4>Onsite — Italy (2020)</h4><p>Cross-cultural collaboration on production systems with European stakeholders.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="section-inner">
+    <span class="section-label">Get In Touch</span>
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="contact-grid">
+      <a href="mailto:pooja.kumawat75@gmail.com" class="contact-card" style="color:inherit">
+        <div class="icon">&#9993;&#65039;</div>
+        <h4>Email</h4>
+        <p>pooja.kumawat75@gmail.com</p>
+      </a>
+      <a href="https://www.linkedin.com/in/pooja-kumawat-7443368a" target="_blank" class="contact-card" style="color:inherit">
+        <div class="icon">&#128279;</div>
+        <h4>LinkedIn</h4>
+        <p>in/pooja-kumawat</p>
+      </a>
+      <a href="https://github.com/rtpuja" target="_blank" class="contact-card" style="color:inherit">
+        <div class="icon">&#128187;</div>
+        <h4>GitHub</h4>
+        <p>github.com/rtpuja</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Pooja Kumawat. Built with passion for clean code and great design.</p>
+</footer>
+
+<script>
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
+});
+</script>
+</body>
+</html>
